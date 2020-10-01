@@ -1,0 +1,22 @@
+!!! 5
+%html
+%head
+	%title Tarif Budur
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+
+%body
+	%nav.navbar.navbar-default
+		.container
+			.navbar-brand= link_to "Tarif Budur", root_path
+
+			%ul.nav.navbar-nav.navbar-right
+				%li= link_to "Yeni Tarif", new_recipe_path
+				%li= link_to "Çıkış Yap", root_path
+
+
+	.container
+		- flash.each do |name, msg|
+			= content_tag :div, msg, class: "alert"
+
+		= yield
